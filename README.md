@@ -2,8 +2,6 @@
 
 A machine learning web app that detects whether an **SMS message or email** is **Spam** or **Not Spam** — instantly.
 
-🔗 **Live Demo:** https://web-production-23158.up.railway.app
-
 \---
 
 ## What it does
@@ -51,8 +49,8 @@ spamsys/
 ├── app.py                  ← Flask server
 ├── model.pkl               ← Trained SMS Naive Bayes model
 ├── vectorizer.pkl          ← SMS TF-IDF vectorizer
-├── email\\\\\\\_model.pkl         ← Trained Email Naive Bayes model
-├── email\\\\\\\_vectorizer.pkl    ← Email TF-IDF vectorizer
+├── email_model.pkl         ← Trained Email Naive Bayes model
+├── email_vectorizer.pkl    ← Email TF-IDF vectorizer
 ├── Procfile                ← Railway deployment config
 ├── requirements.txt        ← Dependencies
 ├── templates/
@@ -62,7 +60,7 @@ spamsys/
 │   └── style.css           ← Styling
 └── notebook/
     ├── train.ipynb         ← SMS model training
-    └── train\\\\\\\_email.ipynb   ← Email model training
+    └── train_email.ipynb   ← Email model training
 ```
 
 \---
@@ -82,18 +80,10 @@ Then open http://127.0.0.1:5000
 
 ## How it works
 
-### SMS Classification
+### SMS And EMAIL Classification
 
-1. User pastes an SMS message into the web form
+1. User pastes an SMS message/Email content into the web form
 2. Flask receives the message
 3. TF-IDF vectorizer converts the text into numerical features
-4. Naive Bayes model predicts **Spam** or **Not Spam**
-5. Result is displayed instantly
-
-### Email Classification
-
-1. User pastes email content into the web form
-2. Flask receives the email
-3. TF-IDF vectorizer converts the email text into numerical features
 4. Naive Bayes model predicts **Spam** or **Not Spam**
 5. Result is displayed instantly
