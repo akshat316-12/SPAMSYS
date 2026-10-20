@@ -43,6 +43,7 @@
                         <div>
                             <p class="result-label">Prediction</p>
                             <p class="result-value">{{ result }}</p>
+                            <p class="result-confidence">Spam likelihood: {{ '%.1f'|format(spam_probability * 100) }}%</p>
                         </div>
                     </div>
                 </div>

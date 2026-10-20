@@ -69,6 +69,7 @@ def email_page():
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
+    spam_probability = None
     message = ""
     error = None
     if request.method == "POST":
@@ -78,8 +79,15 @@ def index():
         else:
             transformed = vectorizer.transform([message])
             prediction = model.predict(transformed)
+            spam_probability = float(model.predict_proba(transformed)[0][1])
             result = "🚨 Spam" if prediction[0] == 1 else "✅ Not Spam"
-    return render_template("index.html", result=result, message=message, error=error)
+    return render_template(
+        "index.html",
+        result=result,
+        spam_probability=spam_probability,
+        message=message,
+        error=error,
+    )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

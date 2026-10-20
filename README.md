@@ -30,16 +30,17 @@ SpamSys can classify both **SMS messages and emails** as **Spam** or **Not Spam*
 
 ### SMS Spam Classifier
 
-* **Accuracy:** 96.2%
-* **Dataset:** SMS Spam Collection (5,169 messages) from Kaggle
+* **Accuracy:** 98.57%
+* **Dataset:** SMS Spam Collection (5,572 messages) from Kaggle
 * **Classification:** Spam / Not Spam
 
 ### Email Spam Classifier
 
-* **Accuracy:** 93.24%
-* **Dataset:** SpamAssassin Public Corpus (3,052 emails)
+* **Accuracy:** 99.48%
+* **Dataset:** SpamAssassin Public Corpus (2,881 emails)
 * **Classification:** Spam / Not Spam
 
+Both models are evaluated on a held-out 20% test split.
 \---
 
 ## Project Structure
