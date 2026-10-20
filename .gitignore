@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv
+notebook/spam.csv
+notebook/*.tar.bz2
+notebook/easy_ham/
+notebook/spam/
